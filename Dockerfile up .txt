@@ -1,0 +1,8 @@
+cd jenkins
+nano Dockerfile -m
+docker build -t my-jenkins-image .\n
+
+
+veya
+
+docker run -d -v dockerjenkins:/var/jenkins-home -p 8080:8080 --restart unless-stopped jenkins/jenkins:lts

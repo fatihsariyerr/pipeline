@@ -1,0 +1,5 @@
+cd /home/git/
+docker build -t github-nginx-demo . --no-cache
+docker stop my-nginx-container || true
+docker rm my-nginx-container || true
+docker run -d -p 8888:80 --name my-nginx-container --restart unless-stopped github-nginx-demo 
